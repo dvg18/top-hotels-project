@@ -8,9 +8,9 @@ use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\web\View;
 use yii\widgets\Breadcrumbs;
-use app\assets\AppAsset;
+use app\assets\EntryAssets;
 
-AppAsset::register($this);
+EntryAssets::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -22,35 +22,10 @@ AppAsset::register($this);
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <link rel="icon" href="/i/favicon.png">
+    <script src="js/jquery.311.min.js"></script>
 </head>
 
-<link rel="icon" href="/i/favicon.png">
-<link href="/css/_lsfw/reset-ls.css?v=1544103235" rel="stylesheet">
-<link href="/css/_lsfw/atom.css?v=1544103235" rel="stylesheet">
-<link href="/css/_lsfw/fonts.css?v=1544103235" rel="stylesheet">
-<link href="/css/_lsfw/tabs.css?v=1544103235" rel="stylesheet">
-<link href="/css/vendor/font-awesome-5.0/css/fontawesome-all.css?v=1544103236" rel="stylesheet">
-<link href="/css/vendor/sumoselect.css?v=1544103234" rel="stylesheet">
-<link href="/css/vendor/th-sumoselect.css?v=1544103234" rel="stylesheet">
-<link href="/css/vendor/magnific-popup.css?v=1544103234" rel="stylesheet">
-<link href="/css/lib-ui-tour-filter/flags.css?v=1544103234" rel="stylesheet">
-<link href="/css/lib-ui-tour-filter/lsfw-tour-filter.css?v=1544103234" rel="stylesheet">
-<link href="/css/lib-ui-tour-filter/lsfw-form-direction.css?v=1544103234" rel="stylesheet">
-<link href="/css/lib-ui-tour-filter/lsfw-date-widget.css?v=1544103234" rel="stylesheet">
-<link href="/css/lib-ui-tour-filter/lsfw-adults-widget.css?v=1544103234" rel="stylesheet">
-<link href="/css/lib-ui-tour-filter/lsfw-durability-widget.css?v=1544103234" rel="stylesheet">
-<link href="/css/lib-ui-tour-filter/lsfw-price-widget.css?v=1544103234" rel="stylesheet">
-<link href="/css/tophotels_site_html/main-cnt.css?v=1544103234" rel="stylesheet">
-<link href="/css/tophotels_site_html/main.css?v=1544103234" rel="stylesheet">
-<link href="/css/tophotels_site_html/layouts/header.css?v=1544103235" rel="stylesheet">
-<link href="/css/tophotels_site_html/layouts/header-mobile.css?v=1544103235" rel="stylesheet">
-<link href="/css/tophotels_site_html/layouts/footer.css?v=1544103235" rel="stylesheet">
-<link href="/css/tophotels_site_html/layouts/left-menu.css?v=1544103235" rel="stylesheet">
-<link href="/css/tophotels_site_html/layouts/left-menu-mobile.css?v=1544103235" rel="stylesheet">
-<link href="/css/tophotels_site_html/agree-pp.css?v=1544103234" rel="stylesheet">
-<link href="/css/tophotels_site_html/tabs-bar-mobile.css?v=1544103234" rel="stylesheet">
-<link href="/css/site.css?v=1544103233" rel="stylesheet">
-<script src="/js/jquery.311.min.js?v=1544103230"></script>
 <body>
 <?php $this->beginBody() ?>
 
@@ -59,7 +34,7 @@ AppAsset::register($this);
     <div class="headerMobile">
 
         <div class="headerMobile__flex js-serach-active-hide">
-            <a href="/tophotels/" class="headerMobile__logo">
+            <a href="/" class="headerMobile__logo">
                 <img src="/i/th-logo.png" width="112" height="40" class="mr10">
             </a>
 
@@ -235,7 +210,7 @@ AppAsset::register($this);
     <header class="header">
 
         <div class="header-cnt header-cnt_index ">
-            <a href="/tophotels/" class="header-logo">
+            <a href="/" class="header-logo">
                 <img src="/i/th-logo.png" alt="">
             </a>
             <div class="header-nav">
@@ -2040,50 +2015,26 @@ AppAsset::register($this);
             </div>
         </div>
     </div>
+</div>
+<footer class="footer footer2018">
 
-    <footer class="footer footer2018">
-
-        <div class="footer__line footer__line--bot">
-            <div class="footer__copyright">
-                <p class="footer__cnt bold  copyright">© TopHotels 2003-<?= date('Y') ?></p>
-                <a href="#legal-information-pp" class="legal-information-pp footer__cnt-link legal ">правовая
-                    информация</a>
-            </div>
-
-            <div class="footer__cnt-wrap">
-                <p class="footer__cnt footer__cnt--sm fz12 footer-text">Все права защищены. Перепечатка, включение
-                    информации, содержащейся в рекламных и иных материалах сайта, во всевозможные базы данных для
-                    дальнейшего их коммерческого использования, размещение таких материалов в любых СМИ и Интернете
-                    допускаются только с письменного разрешения редакции сайта. Предоставляемый сервис является
-                    информационным. Администрация сайта не несет ответственности за достоверность и качество информации,
-                    предоставляемой посетителями сайта, в том числе турфирмами и отельерами. </p>
-            </div>
+    <div class="footer__line footer__line--bot">
+        <div class="footer__copyright">
+            <p class="footer__cnt bold  copyright">© TopHotels 2003-<?= date('Y') ?></p>
+            <a href="#legal-information-pp" class="legal-information-pp footer__cnt-link legal ">правовая
+                информация</a>
         </div>
-    </footer>
-    <script src="/js/jquery-ui.min.js?v=1544103230"></script>
-    <script src="/js/vendor/magnific-popup.min.js?v=1544103232"></script>
-    <script src="/js/vendor/SumoSelectLS/js/jquery.sumoselect-ls.min.js?v=1544103233"></script>
-    <script src="/js/vendor/jquery-datepicker-range.js?v=1544103232"></script>
-    <script src="/js/tophotels_site_html/tk-form-v2/date-function.js?v=1544103232"></script>
-    <script src="/js/tophotels_site_html/tk-form-v2/main.js?v=1544103232"></script>
-    <script src="/js/tophotels_site_html/tk-form-v2/form-date.js?v=1544103232"></script>
-    <script src="/js/tophotels_site_html/form-pp-universal.js?v=1544103231"></script>
-    <script src="/js/tophotels_site_html/form-directions.js?v=1544103231"></script>
-    <script src="/js/tophotels_site_html/main.js?v=1544103231"></script>
-    <script src="/js/tophotels_site_html/help-selections.js?v=1544103231"></script>
-    <script src="/js/tophotels_site_html/agree-pp.js?v=1544103231"></script>
-    <script src="/js/tophotels_site_html/header-mobile.js?v=1544103231"></script>
-    <script src="/js/tophotels_site_html/left-menu-mobile.js?v=1544103231"></script>
-    <script src="/js/tophotels_site_html/legal-info-pp.js?v=1544103231"></script>
-    <script src="/js/libs/array-function.js"></script>
-    <script src="/js/libs/date-function.js"></script>
-    <script src="/js/libs/number-function.js"></script>
-    <script src="/js/libs/string-function.js"></script>
-    <script src="/js/libs/debounce.js"></script>
-    <script src="/js/libs/reverseLocale.js"></script>
-    <script src="/js/libs/LSPager.js"></script>
-    <script src="/js/libs/LSSuggest.js"></script>
 
+        <div class="footer__cnt-wrap">
+            <p class="footer__cnt footer__cnt--sm fz12 footer-text">Все права защищены. Перепечатка, включение
+                информации, содержащейся в рекламных и иных материалах сайта, во всевозможные базы данных для
+                дальнейшего их коммерческого использования, размещение таких материалов в любых СМИ и Интернете
+                допускаются только с письменного разрешения редакции сайта. Предоставляемый сервис является
+                информационным. Администрация сайта не несет ответственности за достоверность и качество информации,
+                предоставляемой посетителями сайта, в том числе турфирмами и отельерами. </p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
 <?php $this->endPage() ?>

@@ -24,28 +24,32 @@ class EntryController extends Controller
         $model = new Entry();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->mailer->compose('entry', [
-                'userName' => '%username%',
-                'entryId' => $model->id,
-                'detailPageLink' => $_SERVER['HTTP_HOST'] . '/index.php?r=entry1%2Fview&id=' . $model->id,
-                'clientName' => $model->name,
-                'clientPhone' => $model->phone,
-                'clientEmail' => $model->email,
-                'supportPageLink' => 'https://tophotels.ru/feedback',
-                'content' => '',
-
-            ])
-                ->setTo('reghik@ya.ru')
-                ->setFrom(['dumkailim@mail.ru'])
-//                ->setFrom(['test.th.welcome@gmail.com'])
-                ->setSubject('Добавлена новая заявка')
-                ->setTextBody('Поступила заявка №:' . $model->id)
-                ->send();
-
+            $this->sendMailEntry($model);
             return $this->render('entry-confirm', ['model' => $model]);
         } else {
             return $this->render('entry', ['model' => $model]);
         }
+    }
+
+    /**
+     * @param Entry $entry
+     */
+    private function sendMailEntry($entry)
+    {
+        Yii::$app->mailer->compose('entry', [
+            'userName' => '%username%',
+            'entryId' => $entry->id,
+            'detailPageLink' => $_SERVER['HTTP_HOST'] . '/index.php?r=admin%2Fentry%2Fview&id=' . $entry->id,
+            'clientName' => $entry->name,
+            'clientPhone' => $entry->phone,
+            'clientEmail' => $entry->email,
+            'supportPageLink' => 'https://tophotels.ru/feedback',
+        ])
+            ->setTo(['test.th.welcome@gmail.com'])
+            ->setFrom(['test.th.welcome@gmail.com'])
+            ->setSubject('Добавлена новая заявка')
+            ->setTextBody('Поступила заявка №:' . $entry->id)
+            ->send();
     }
 
 }

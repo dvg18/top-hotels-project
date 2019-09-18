@@ -13,11 +13,11 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 /**
- * EntryController implements Entry page and the CRUD actions for Entry model.
- * Class EntriesController
+ * EntryController implements the CRUD actions for Entry model.
+ * Class EntryController
  * @package app\controllers\admin
  */
-class EntriesController extends Controller
+class EntryController extends Controller
 {
 
     /**
@@ -28,9 +28,6 @@ class EntriesController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-//                'denyCallback' => function ($rule, $action) {
-//                    throw new \Exception('У вас нет доступа к этой странице');
-//                },
                 'only' => ['index', 'view', 'create', 'update', 'delete'],
                 'rules' => [
                     [
@@ -146,6 +143,6 @@ class EntriesController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }
 }

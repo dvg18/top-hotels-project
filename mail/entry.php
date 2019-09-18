@@ -1,3 +1,12 @@
+<?php
+/* @var $userName string */
+/* @var $entryId integer */
+/* @var $detailPageLink string */
+/* @var $clientName string */
+/* @var $clientPhone string */
+/* @var $clientEmail string */
+/* @var $supportPageLink string */
+?>
 <div class="container">
     <div id="leftbar" class="leftbar">
     </div>
@@ -41,7 +50,7 @@
                             <td style="font: 16px Arial, sans-serif;line-height: 20px;padding: 35px 30px 20px;text-align: center;">
                                 Здравствуйте, <?= $userName ?>!
                             </td>
-                        </tr>
+                        </tr
 
                         <tr>
                             <td style="font: 16px Arial, sans-serif;line-height: 20px;padding: 0 30px 10px;">

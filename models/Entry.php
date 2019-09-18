@@ -25,7 +25,7 @@ class Entry extends ActiveRecord
      */
     public static function tableName()
     {
-        return 'entry';
+        return '{{entry}}';
     }
 
     /**
@@ -38,12 +38,7 @@ class Entry extends ActiveRecord
                 'class' => TimestampBehavior::className(),
                 'attributes' => [
                     ActiveRecord::EVENT_BEFORE_INSERT => 'create_date',
-                    //ActiveRecord::EVENT_BEFORE_UPDATE => 'update_time',
                 ],
-//                'value' => function () {
-//                    return date('d-m-Y H:i:s');
-//                },
-//                'createdAtAttribute' => 'create_date',
                 'value' => new Expression('CURRENT_TIMESTAMP'),
             ],
         ];
@@ -55,10 +50,8 @@ class Entry extends ActiveRecord
     public function rules()
     {
         return [
-            //[['id'], 'integer'],
-            [[ 'name', 'phone', 'email'], 'string', 'max' => 30],
-            [['text_parameters', 'direction'], 'string', 'max' => 100],
-//            [['create_date'], 'string'],
+            [['name', 'phone', 'email', 'direction'], 'string', 'max' => 30],
+            [['text_parameters'], 'string', 'max' => 100],
             [['name', 'phone'], 'required'],
             ['email', 'email'],
 
