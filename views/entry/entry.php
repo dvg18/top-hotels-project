@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
                                 'template' => '{input}{label}',
                                 'labelOptions' => ['class' => 'bth__inp-lbl', 'style' => 'font-weight: normal;'],
                                 'options' => [
-                                    'tag' => false, // Don't wrap with "form-group" div
+                                    'tag' => false, // to don't wrap with "form-group" div
                                 ]
                             ])
                                 ->textarea(['rows' => 5, 'cols' => 5, 'class' => 'bth__inp  bold js-stop-label'])
@@ -50,9 +50,10 @@ use yii\widgets\ActiveForm;
                                     'labelOptions' => ['class' => 'bth__inp-lbl', 'style' => 'font-weight: normal;'],
                                     'validateOnBlur' => false,
                                     'options' => [
-                                        'tag' => false, // Don't wrap with "form-group" div
+                                        'tag' => false, // to don't wrap with "form-group" div
                                     ]
                                 ])->textInput(array('placeholder' => '', 'class' => 'bth__inp js-label'))
+                                ->label('Ваше имя')
                                 ?>
                             </div>
                         </div>
@@ -70,7 +71,7 @@ use yii\widgets\ActiveForm;
                                     'labelOptions' => ['class' => 'bth__inp-lbl', 'style' => 'font-weight: normal;'],
                                     'validateOnBlur' => false,
                                     'options' => [
-                                        'tag' => false, // Don't wrap with "form-group" div
+                                        'tag' => false, // to don't wrap with "form-group" div
                                     ]
                                 ])->textInput(array('class' => 'bth__inp js-label'))
                                 ?>
@@ -83,9 +84,10 @@ use yii\widgets\ActiveForm;
                                     'template' => '{input}{label}',
                                     'labelOptions' => ['class' => 'bth__inp-lbl', 'style' => 'font-weight: normal;'],
                                     'options' => [
-                                        'tag' => false, // Don't wrap with "form-group" div
+                                        'tag' => false, // to don't wrap with "form-group" div
                                     ]
                                 ])->textInput(array('placeholder' => '', 'class' => 'bth__inp js-label'))
+                                ->label('Email (не обязательно)')
                                 ?>
                             </div>
                         </div>

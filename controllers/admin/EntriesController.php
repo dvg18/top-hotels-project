@@ -1,25 +1,45 @@
 <?php
 
-namespace app\controllers;
 
-use Yii;
+namespace app\controllers\admin;
+
+
 use app\models\Entry;
+use Yii;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
- * Entry1Controller implements the CRUD actions for Entry model.
+ * EntryController implements Entry page and the CRUD actions for Entry model.
+ * Class EntriesController
+ * @package app\controllers\admin
  */
-class Entry1Controller extends Controller
+class EntriesController extends Controller
 {
+
     /**
      * {@inheritdoc}
      */
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+//                'denyCallback' => function ($rule, $action) {
+//                    throw new \Exception('У вас нет доступа к этой странице');
+//                },
+                'only' => ['index', 'view', 'create', 'update', 'delete'],
+                'rules' => [
+                    [
+                        'actions' => ['index', 'view', 'create', 'update', 'delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -37,6 +57,9 @@ class Entry1Controller extends Controller
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Entry::find(),
+            'pagination' => [
+                'pageSize' => 10
+            ]
         ]);
 
         return $this->render('index', [
