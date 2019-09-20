@@ -37,16 +37,16 @@ class EntryController extends Controller
     private function sendMailEntry($entry)
     {
         Yii::$app->mailer->compose('entry', [
-            'userName' => '%username%',
+            'userName' => '',
             'entryId' => $entry->id,
-            'detailPageLink' => $_SERVER['HTTP_HOST'] . '/index.php?r=admin%2Fentry%2Fview&id=' . $entry->id,
+            'detailPageLink' => 'http://' . $_SERVER['HTTP_HOST'] . '/index.php?r=admin%2Fentry%2Fview&id=' . $entry->id,
             'clientName' => $entry->name,
             'clientPhone' => $entry->phone,
-            'clientEmail' => $entry->email,
+            'recipientEmail' => 'test.mail.box@inbox.ru',
             'supportPageLink' => 'https://tophotels.ru/feedback',
         ])
-            ->setTo(['test.th.welcome@gmail.com'])
-            ->setFrom(['test.th.welcome@gmail.com'])
+            ->setTo(['test.mail.box@inbox.ru'])
+            ->setFrom(['test.mail.box@inbox.ru'])
             ->setSubject('Добавлена новая заявка')
             ->setTextBody('Поступила заявка №:' . $entry->id)
             ->send();

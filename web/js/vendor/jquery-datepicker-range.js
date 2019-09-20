@@ -4,9 +4,9 @@
 ;(function (factory, jQuery, fecha) {
 
     if (typeof define === 'function' && define.amd) {
-        define(['app/web/js/jquery', 'fecha'], factory);
+        define(['jquery', 'fecha'], factory);
     } else if (typeof exports === 'object') {
-        module.exports = factory(require('app/web/js/jquery'), require('fecha'));
+        module.exports = factory(require('jquery'), require('fecha'));
     } else {
         factory(jQuery, fecha);
     }

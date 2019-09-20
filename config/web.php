@@ -40,9 +40,9 @@ $config = [
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',
-                'username' => 'test.th.welcome@gmail.com',
-                'password' => 'xsfnqiubaakiaswt',
+                'host' => 'smtp.mail.ru',
+                'username' => 'test.mail.box@inbox.ru',
+                'password' => 'q9w8e7r6t5y',
                 'port' => '465',
                 'encryption' => 'ssl',
             ],
@@ -57,14 +57,15 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '/' => 'site/index',
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];

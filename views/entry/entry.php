@@ -12,13 +12,6 @@ use yii\widgets\ActiveForm;
             <div class="line" style="width: 130px"></div>
         </div>
 
-
-
-
-
-
-
-
         <div class="panel" id="formPanel">
             <div class="bth__cnt uppercase">Пожалуйста, укажите параметры вашей поездки</div>
 
@@ -87,9 +80,14 @@ use yii\widgets\ActiveForm;
                     </div>
                     <div class="tour-selection-field tour-selection-field--30p">
 
-                        <div class="bth__inp-block field-entry-email">
+                        <div class="js-add-error bth__inp-block field-entry-email">
                             <?= $form->field($model, 'email', [
-                                'template' => '{input}{label}{error}',
+                                'template' => '{input}{label}<div class="hint-block hint-block--abs">
+                                <i class="fa fa-question-circle question-error" aria-hidden="true"></i>
+                                <div class="hint">
+                                    <p class="bth__cnt">Некорректный Email</p>
+                                </div>
+                            </div>',
                                 'labelOptions' => ['class' => 'bth__inp-lbl', 'style' => 'font-weight: normal;'],
                                 'options' => [
                                     'tag' => false, // to don't wrap with "form-group" div

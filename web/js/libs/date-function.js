@@ -1,4 +1,6 @@
-"use strict";
+/**
+ * Created by MaksymZ on 18.10.2016.
+ */
 
 var dateLocaleWeekDaysShort = {
     1: 'пн',
@@ -187,7 +189,7 @@ Date.isDDMMYYYY = function(d) {
  * @returns {number}
  */
 Date.prototype.dayDiff = function(d) {
-    return Math.ceil((this.getTime() - d.getTime()) / 1000 / 60 / 60 / 24);
+    return (this.getTime() - d.getTime()) / 1000 / 60 / 60 / 24;
 };
 
 /**
@@ -238,7 +240,7 @@ Date.createFromIsoDateWithOffset = function(d, offsetMinutes) {
 
 /**
  * Сегодняшний день в ISO формате
- * @returns {string}
+ * @returns {Date}
  */
 Date.todayISO = function() {
     return new Date().format('Y-m-d');

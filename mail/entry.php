@@ -4,7 +4,7 @@
 /* @var $detailPageLink string */
 /* @var $clientName string */
 /* @var $clientPhone string */
-/* @var $clientEmail string */
+/* @var $recipientEmail string */
 /* @var $supportPageLink string */
 ?>
 <div class="container">
@@ -90,15 +90,13 @@
                                     <tr>
                                         <td style="font: 15px Arial, sans-serif;line-height: 20px;padding: 0 15px 5px;">
                                             Ваш клиент:
-                                            <a href="#" target="_blank"
-                                               style="-webkit-text-size-adjust:none;font: 15px Arial, sans-serif;line-height: 20px;color: #318cc6;text-decoration: none;"><?= $clientName ?></a>
+                                           <?= $clientName ?>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="font: 15px Arial, sans-serif;line-height: 20px;padding: 0 15px 5px;">
                                             Телефон:
-                                            <a href="#" target="_blank"
-                                               style="-webkit-text-size-adjust:none;font: 15px Arial, sans-serif;line-height: 20px;color: #000000;text-decoration: none;"><?= $clientPhone ?></a>
+                                            <?= $clientPhone ?>
                                         </td>
                                     </tr>
 
@@ -166,8 +164,8 @@
                         <tbody>
                         <tr>
                             <td style="font-family:Arial,sans-serif;font-size: 12px;line-height: 16px;color: #999999;text-align: center;padding: 30px 5px;">
-                                Это письмо отправлено на адрес <a href="mailto:<?= $clientEmail ?>"
-                                                                  target="_blank"><?= $clientEmail ?></a>
+                                Это письмо отправлено на адрес <a href="mailto:<?= $recipientEmail ?>"
+                                                                  target="_blank"><?= $recipientEmail ?></a>
                                 автоматически.
                                 При возникновении вопросов вы можете обратиться в <a href="<?= $supportPageLink ?>">
                                     техподдержку TopHotels</a>
