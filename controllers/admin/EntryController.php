@@ -56,7 +56,10 @@ class EntryController extends Controller
             'query' => Entry::find(),
             'pagination' => [
                 'pageSize' => 10
-            ]
+            ],
+            'sort' => [
+                'defaultOrder' => ['create_date' => SORT_DESC]
+            ],
         ]);
 
         return $this->render('index', [

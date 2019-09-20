@@ -79,9 +79,9 @@ use yii\widgets\ActiveForm;
                     </div>
                     <div class="tour-selection-field tour-selection-field--30p">
 
-                        <div class="bth__inp-block  ">
+                        <div class="bth__inp-block field-entry-email">
                             <?= $form->field($model, 'email', [
-                                'template' => '{input}{label}',
+                                'template' => '{input}{label}{error}',
                                 'labelOptions' => ['class' => 'bth__inp-lbl', 'style' => 'font-weight: normal;'],
                                 'options' => [
                                     'tag' => false, // to don't wrap with "form-group" div
