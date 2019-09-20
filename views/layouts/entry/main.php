@@ -739,6 +739,7 @@ EntryAssets::register($this);
             </div>
         </div>
     </footer>
+</div>
 </body>
 </html>
 <?php $this->endPage() ?>

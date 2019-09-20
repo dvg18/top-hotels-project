@@ -7,9 +7,17 @@ use yii\widgets\ActiveForm;
 <div class="tour-selection-box">
     <div class="tabs-block">
         <div class="tabs-bar tabs-bar--responsive js-768-tabs">
+<!--            <div id="step1" class="tab active">Подобрать тур</div>-->
             <div id="form" class="tab active">Нестандартный запрос</div>
             <div class="line" style="width: 130px"></div>
         </div>
+
+
+
+
+
+
+
 
         <div class="panel" id="formPanel">
             <div class="bth__cnt uppercase">Пожалуйста, укажите параметры вашей поездки</div>
@@ -108,8 +116,8 @@ use yii\widgets\ActiveForm;
                     </div>
                 </div>
             </div>
+            <?php ActiveForm::end(); ?>
         </div>
     </div>
 </div>
-<?php ActiveForm::end(); ?>
 
